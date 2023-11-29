@@ -1,0 +1,532 @@
+//Robert Price 
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    margin: 0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Global Styles */
+h1{
+    2em;
+}
+h2{
+    1.75em;
+}
+h3{
+    1.5em;
+}
+h4{
+    1.25em;
+}
+h1, h2, h3{
+    font-family: 'Molle', cursive;
+}
+
+h4, p, q, small, nav, button, form{
+    font-family: 'Montserrat', sans-serif;
+}
+h4{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*Color Pallette*/
+:root{
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --darkgray: #222222;
+    --lightgray: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000;
+
+
+}
+/* Skip to Content Link */
+#skip{
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+ 
+#skip:focus
+{
+position:static;
+width:auto;
+height:auto;
+}
+
+
+/*Header*/
+/* ... (previous styles) ... */
+header{
+    background: linear-gradient(to bottom, var(--blue), var(--white));
+}
+#menuToggle {
+    position: fixed;
+    top: 20px; /* Adjust the top position as needed */
+    right: 0;
+    z-index: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#toggle {
+    display: none; /* Hide the checkbox */
+}
+
+label[for="toggle"] {
+    cursor: pointer;
+}
+
+#menuToggle label span {
+    display: block;
+    margin-bottom: 6px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--yellow);
+    padding: 10px 40px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 1;
+    -webkit-transform-origin: 4px 0px;
+    -ms-transform-origin: 4px 0px;
+    transform-origin: 4px 0px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#menu {
+    position: fixed;
+    width: 300px;
+    margin: 0;
+    background: var(--blue);
+    right: 100%;
+    -webkit-transition: right 0.3s ease;
+    -o-transition: right 0.3s ease;
+    transition: right 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+    list-style-type: none;
+}
+#menu a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+#menuToggle input:checked ~ label span {
+    background: transparent;
+}
+
+#menuToggle input:checked ~ #menu {
+    right: 0;
+}
+
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+#img-grid img,
+#img-grid picture img {
+    width: 100%; /* Make sure images fill the grid cells */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    max-width: 100%; /* Set a maximum width for responsiveness */
+}
+/* Plan Section */
+#plan{
+    background-color: var(--yellow);
+    text-align: center;
+}
+#plan h3{
+    padding-top: 20px;;
+}
+#plan div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+#plan div section{
+    border: solid 5px var(--white);
+    border-radius: 4px;
+    background-color: var(--teal);
+}
+#plan img{
+    height: 75%;
+    width: 75%;
+}
+
+/* Testimonials Section */
+
+#testimonials div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+    padding: 10px;
+}
+q{
+    font-style: italic;
+}
+q::before {
+    content: "\201C"; /* Unicode character for left double quotation mark */
+}
+
+q::after {
+    content: "\201D"; /* Unicode character for right double quotation mark */
+}
+
+/*About Your Destination*/
+#about {
+    background-color: var(--blue);
+    padding: 20px; /* Add some padding to center the content */
+    text-align: center;
+}
+
+#about div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+#about img {
+    max-width: 100%; /* Make images responsive by setting max-width to 100% */
+
+}
+#about h4{
+    margin-top: 10px;
+}
+
+/* Contact Section */
+#contact{
+    margin-left: 10px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    gap: 10px;
+}
+#contact span{
+    font-family: 'Montserra', sans-serif;
+    font-weight: 400;
+    font-size: .75em;
+}
+#names label, input{
+    display: block;
+}
+#contact label{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 10px auto;
+
+}
+#contact input{
+    margin: 10px auto;
+}
+fieldset{
+    border: none;
+}
+span.radio-label{
+    text-transform: capitalize;
+}
+legend{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+fieldset label{
+    display: flex;
+    align-items: center;
+    padding:
+}
+.radio-input{
+    margin-right: 5px;
+    
+}
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: transparent;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--purple);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+.required{
+    color: var(--purple);
+}
+#contact input{
+    border: solid 2px var(--purple);
+    width: 90%;
+    padding: 10px;
+
+}
+#contact input::placeholder{
+    color: var(--black);
+}
+#selects select{
+    border: solid 2px var(--purple);
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+}
+input[type='submit']{
+    background-color: var(--purple);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Footer */
+footer{
+    background-color: var(--lightgray);
+    display: flex;
+    font-size: .5em;
+    gap: 8px;
+    align-items: center;
+}
+footer a{
+    text-decoration: none;
+    color: var(--darkgray)
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 554px) {
+    .header-container{
+        display: flex;
+    }
+    #menuToggle {
+        position: static;
+        background-color: transparent;
+    }
+    #toggle {
+        display: none;
+    }
+    #menuToggle label span {
+        display: none;
+    }
+    #menu {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: static;
+        width: 100%; /* Full width of the screen */
+        background: transparent;
+        transition: left 0.3s ease;
+        font-weight: bold;
+    }
+    #menu li {
+        padding: 10px;
+        background-color: var(--white);
+        display: inline-block;
+    }
+    #menu li:first-child{
+        background-color: var(--yellow);
+    }
+    #menuToggle input:checked ~ #menu {
+        left: 0; /* Display the menu when the checkbox is checked */
+    }
+    #intro{
+        margin: 10px;
+    }
+    #img-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* Adjust the gap between the images as needed */
+    }
+    #img-grid picture {
+        grid-column: span 2; /* Span two columns in the main grid */
+    }
+    #img-grid picture img {
+        width: 100%; /* Make sure the image inside the picture fills the container */
+        height: auto; /* Maintain aspect ratio */
+    }
+    #plan div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    #testimonials div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    #about div{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    #contact{
+        margin: 30px;
+        text-align: left;
+    }
+    #contact input{
+        margin-left: 0;
+        padding: 15px;
+    }
+    #contact label{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #contact fieldset{
+        margin: 0;
+        padding: 0;
+    }
+    fieldset{
+        display: flex;
+    }
+    input[type="submit"]{
+        width: 30%;
+        max-width: 150px; /* Set a maximum width if needed */
+        margin-left: auto; /* Align to the right */
+        margin-right: 0; /* Reset any potential margin on the right */
+        display: block; /* Ensure it takes up the specified width */
+        float: right;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    header {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    #menuToggle{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #menu{
+        justify-content: end;
+    }
+    #menu li{
+        margin: 10px;
+    }
+    #intro{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 50px;
+        margin-top: 75px;
+        justify-content: center;
+    }
+    #plan div{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #testimonials div{
+        display: flex;
+    }
+    #testimonials section{
+        width: 24%;
+    }
+    #about h3{
+        text-align: left;
+    }
+    #contact form{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--lightgray);
+        padding: 10px;
+    }
+    footer p {
+        margin: 0;
+    }
+    
+}
+
